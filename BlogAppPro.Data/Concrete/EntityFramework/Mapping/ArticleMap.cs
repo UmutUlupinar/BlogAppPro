@@ -28,12 +28,18 @@ namespace BlogAppPro.Data.Concrete.EntityFramework.Mapping
                     ID = 1,
                     IsDeleted = false,
                     CategoryID = 1,
+                    UserID = 1,
+                    Content="c# guzel bir dil",
+                    Note="sss",
                 },
                 new Article
                     {
                         ID = 2,
                         IsDeleted = false,
                         CategoryID = 2,
+                        UserID = 1,
+                        Content = "java guzel diil",
+                        Note = "sss",
                 }
             );
         }

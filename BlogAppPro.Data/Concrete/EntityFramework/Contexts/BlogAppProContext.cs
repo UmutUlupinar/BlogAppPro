@@ -11,6 +11,9 @@ namespace BlogAppPro.Data.Concrete.EntityFramework.Contexts
 {
     public class BlogAppProContext : DbContext
     {
+        public BlogAppProContext(DbContextOptions options) : base(options)
+        {
+        }
         public DbSet<Article> Articles { get; set; }
 
         public DbSet<Category> Categories { get; set; }
@@ -22,10 +25,10 @@ namespace BlogAppPro.Data.Concrete.EntityFramework.Contexts
         public DbSet<Role> Roles { get; set; }
 
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\ProjectsV13;Database=BlogAppPro;Trusted_Connection=True;Connect Timeout=30;MultipleActiveResultSets=True;");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\ProjectsV13;Database=BlogAppPro;Trusted_Connection=True;Connect Timeout=30;MultipleActiveResultSets=True;");
+        //}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -24,13 +24,15 @@ namespace BlogAppPro.Data.Concrete.EntityFramework.Mapping
                     ID = 1,
                     Name = "C#",
                     IsDeleted = false,
-                    
+                    Note = "C# is a general-purpose, object-oriented programming language developed",
+
                 },
                 new Category()
                 {
                     ID = 2,
                     Name = "Java",
                     IsDeleted = false,
+                    Note = "Java is a general-purpose, object-oriented programming language developed"
                 }
                 );
         }
