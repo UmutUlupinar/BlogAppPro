@@ -21,7 +21,21 @@ namespace BlogAppPro.Data.Concrete.EntityFramework.Mapping
             builder.HasOne<Category>(a => a.Category).WithMany(c => c.Articles).HasForeignKey(a => a.CategoryID);
             builder.HasOne<User>(a => a.User).WithMany(u => u.Articles).HasForeignKey(a => a.UserID);
             builder.ToTable("Articles");
-           
+
+            builder.HasData(
+                new Article
+                {
+                    ID = 1,
+                    IsDeleted = false,
+                    CategoryID = 1,
+                },
+                new Article
+                    {
+                        ID = 2,
+                        IsDeleted = false,
+                        CategoryID = 2,
+                }
+            );
         }
     }
 }

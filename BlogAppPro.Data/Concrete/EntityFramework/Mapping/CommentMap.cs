@@ -18,6 +18,22 @@ namespace BlogAppPro.Data.Concrete.EntityFramework.Mapping
             builder.Property(a => a.IsDeleted).IsRequired();
             builder.HasOne(a => a.Article).WithMany(a => a.Comments).HasForeignKey(a => a.ArticleID);
             builder.ToTable("Comments");
+            builder.HasData(
+                new Comment
+                {
+                    ID = 1,
+                    ArticleID = 1,
+                    IsDeleted = false,
+                },
+            new Comment
+                {
+                    ID = 2,
+                    ArticleID = 2,
+                    IsDeleted = false,
+                }
+
+            );
+
         }
     }
 

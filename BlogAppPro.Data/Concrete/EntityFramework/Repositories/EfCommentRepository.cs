@@ -10,9 +10,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlogAppPro.Data.Concrete.EntityFramework.Repositories
 {
-    public class CommentRepository : EfEntityRepositoryBase<Comment>, ICommentRepository
+    public class EfCommentRepository : EfEntityRepositoryBase<Comment>, ICommentRepository
     {
-        public CommentRepository(DbContext context) : base(context)
+        public EfCommentRepository(DbContext context) : base(context)
         {
         }
 

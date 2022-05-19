@@ -18,6 +18,14 @@ namespace BlogAppPro.Data.Concrete.EntityFramework.Mapping
             builder.Property(a => a.IsDeleted).IsRequired();
             builder.Property(a => a.Name).HasMaxLength(50).IsRequired();
             builder.ToTable("Roles");
+            builder.HasData(
+                new Role
+                {
+                    ID = 1,
+                    Name = "Admin",
+                    IsDeleted = false,
+                }
+            );
         }
     }
 }

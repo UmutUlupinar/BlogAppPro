@@ -18,6 +18,21 @@ namespace BlogAppPro.Data.Concrete.EntityFramework.Mapping
             builder.Property(a => a.Name).HasMaxLength(50).IsRequired();
             builder.Property(a => a.IsDeleted).IsRequired();
             builder.ToTable("Categories");
+            builder.HasData(
+                new Category()
+                {
+                    ID = 1,
+                    Name = "C#",
+                    IsDeleted = false,
+                    
+                },
+                new Category()
+                {
+                    ID = 2,
+                    Name = "Java",
+                    IsDeleted = false,
+                }
+                );
         }
     }
 }
