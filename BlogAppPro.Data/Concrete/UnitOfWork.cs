@@ -25,10 +25,15 @@ namespace BlogAppPro.Data.Concrete
       
 
         public IArticleRepository Articles => _articleRepository ??  new EfArticleRepository(_context);
-        public ICategoryRepository Categories { get; }
-        public ICommentRepository Comments { get; }
-        public IUserRepository Users { get; }
-        public IRoleRepository Roles { get; }
+        public ICategoryRepository Categories  => _categoryRepository ?? new EfCategoryRepository(_context);
+        public ICommentRepository Comments => _commentRepository ?? new EfCommentRepository(_context);
+        public IUserRepository Users => _userRepository ?? new EfUserRepository(_context);
+        public IRoleRepository Roles => _roleRepository ?? new EfRoleRepository(_context);
+        public async Task<int> SaveAsync()
+        {
+            return await _context.SaveChangesAsync();
+        }
+
         public async ValueTask DisposeAsync()
         {
             await _context.DisposeAsync();

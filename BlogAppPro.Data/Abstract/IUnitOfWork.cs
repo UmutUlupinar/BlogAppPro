@@ -13,5 +13,7 @@ namespace BlogAppPro.Data.Abstract
         ICommentRepository Comments { get; }
         IUserRepository Users { get; }
         IRoleRepository Roles { get; }
+
+        Task<int> SaveAsync();
     }
 }
