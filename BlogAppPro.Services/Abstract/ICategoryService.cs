@@ -11,11 +11,12 @@ namespace BlogAppPro.Services.Abstract
 {
     public interface ICategoryService
     {
-        Task<IDataResult<Category>> Get(int categoryId);
+        Task<IDataResult<CategoryDto>> Get(int categoryId);
 
-        Task<IDataResult<IList<Category>>> GetAll();
+        Task<IDataResult<CategoryListDto>> GetAll();
 
-        Task<IDataResult<IList<Category>>> GetAllByNonDeleted();
+        Task<IDataResult<CategoryListDto>> GetAllByNonDeleted();
+        Task<IDataResult<CategoryListDto>> GetAllByNonDeletedAndActive();
 
         Task<IResult> Add(CategoryAddDto categoryAddDto, string createdByName);
 

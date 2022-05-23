@@ -1,4 +1,5 @@
 using BlogAppPro.Data.Concrete.EntityFramework.Contexts;
+using BlogAppPro.Services.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,8 @@ builder.Services.AddDbContext<BlogAppProContext>(options => options.UseSqlServer
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//builder.AddAutoMapper(typeof(Startup));
+builder.Services.LoadMyServices();
 
 var app = builder.Build();
 
@@ -21,9 +24,16 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
 
+app.UseStatusCodePages();
+app.UseStaticFiles();
 app.UseRouting();
+
+app.MapAreaControllerRoute(
+    name: "Admin",
+    areaName: "Admin",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+);
 
 app.UseAuthorization();
 

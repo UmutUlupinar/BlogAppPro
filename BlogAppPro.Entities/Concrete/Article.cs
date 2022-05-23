@@ -16,8 +16,8 @@ namespace BlogAppPro.Entities.Concrete
 
         public DateTime Date { get; set; }
 
-        public int ViewsCount { get; set; }
-        public int CommentCount { get; set; }
+        public int ViewsCount { get; set; } = 0;
+        public int CommentCount { get; set; }=0;
 
         public string SeoAuthor { get; set; }
 

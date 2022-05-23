@@ -13,10 +13,10 @@ namespace BlogAppPro.Services.Abstract
     {
         Task<IDataResult<ArticleDto>> Get(int ArticleId);
 
-        Task<IDataResult<IList<ArticleListDto>>> GetAll();
+        Task<IDataResult<ArticleListDto>> GetAll();
 
-        Task<IDataResult<IList<ArticleListDto>>> GetAllByNonDeleted();
-        Task<IDataResult<IList<ArticleListDto>>> GetAllByNonDeletedAndActive();
+        Task<IDataResult<ArticleListDto>> GetAllByNonDeleted();
+        Task<IDataResult<ArticleListDto>> GetAllByNonDeletedAndActive();
 
         Task<IDataResult<ArticleListDto>> GetAllByCategory(int categoryID);
 
