@@ -9,8 +9,8 @@ builder.Services.AddDbContext<BlogAppProContext>(options => options.UseSqlServer
 
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-//builder.AddAutoMapper(typeof(Startup));
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.LoadMyServices();
 
 var app = builder.Build();
