@@ -14,7 +14,9 @@ namespace BlogAppPro.Data.Concrete.EntityFramework.Repositories
     {
         public EfRoleRepository(DbContext context) : base(context)
         {
-        }
+
+            
+        } 
     }
 
 }
